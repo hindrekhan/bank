@@ -10,7 +10,7 @@ namespace bank
     {
         public static string accountName;
         public static string password;
-        public static int 
+        public static int lineNumber;
 
 
         public static bool Register()
@@ -34,6 +34,9 @@ namespace bank
         {
             string accountName;
             string password;
+            int lineNumber;
+
+            lineNumber = 0;
 
             Console.WriteLine("Sisestage kasutajanimi");
             accountName = Console.ReadLine();
@@ -51,6 +54,8 @@ namespace bank
                     
                     while ((line = sr.ReadLine()) != null)
                     {
+                        lineNumber++;
+
                         if (line.Substring(0, 5) == accountName)
                         {
                             if (line.Substring(6, 4) == password)
