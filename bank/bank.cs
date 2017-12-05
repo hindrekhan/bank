@@ -27,23 +27,43 @@ namespace bank
             decimal value;
 
             arrLine = System.IO.File.ReadAllLines("../../accounts.txt");
-            int a = lineNumber;
+        
+            modifiedLine = arrLine[lineNumber].Substring(0, 10);
 
-            modifiedLine = arrLine[lineNumber];
-            decimal b = decimal.Parse(modifiedLine.Substring(11));
+            value = decimal.Parse(arrLine[lineNumber].Substring(10));
+            value += amount;
 
-            arrLine[lineNumber] += " " + amount;
+            arrLine[lineNumber] = modifiedLine + " " + value.ToString();
+
+            System.IO.File.WriteAllLines("../../accounts.txt", arrLine);
 
             return true;
         }
 
-        public static bool RetrieveMoney(float amount, int lineNumber)
+        public static bool RetrieveMoney(decimal amount, int lineNumber)
         {
             string[] arrLine;
+            string modifiedLine;
+            decimal value;
 
             arrLine = System.IO.File.ReadAllLines("../../accounts.txt");
 
-           // arrLine[lineNumber] += " " + amount;
+            modifiedLine = arrLine[lineNumber].Substring(0, 10);
+
+            value = decimal.Parse(arrLine[lineNumber].Substring(10));
+            value -= amount;
+
+            if (value < 0)
+            {
+                Console.WriteLine("Teil pole nii palju raha");
+
+            }
+
+            arrLine[lineNumber] = modifiedLine + " " + value.ToString();
+
+            System.IO.File.WriteAllLines("../../accounts.txt", arrLine);
+
+
 
             return true;
         }
