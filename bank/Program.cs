@@ -28,7 +28,6 @@ namespace bank
                 else if (userInput == "2")
                 {
                     Accounts.Register();
-                    break;
                 }
 
                 else
@@ -36,6 +35,7 @@ namespace bank
                     Console.WriteLine("Teadmata käsk sisestatud");
                 }
 
+                Console.WriteLine();
             }
 
             while (true)
@@ -57,17 +57,17 @@ namespace bank
 
                     amount = float.Parse(Console.ReadLine());
 
-                    Bank.RetrieveMoney(amount, Accounts.accountName);
+                    Bank.RetrieveMoney(amount, Accounts.lineNumber);
                 }
 
                 else if (userInput == "2")
                 {
-                    float amount;
+                    decimal amount;
 
                     Console.WriteLine("Sisestage summa");
-                    amount = float.Parse(Console.ReadLine());
+                    amount = decimal.Parse(Console.ReadLine());
 
-                    Bank.AddMoney(amount, Accounts.accountName);
+                    Bank.AddMoney(amount, Accounts.lineNumber);
                 }
 
                 else if (userInput == "3")

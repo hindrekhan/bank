@@ -8,9 +8,9 @@ namespace bank
 {
     static class Accounts
     {
-        public static string accountName;
-        public static string password;
-        public static int lineNumber;
+        public static string accountName { get; set; }
+        public static string password { get; set; }
+        public static int lineNumber { get; set; }
 
 
         public static bool Register()
@@ -19,13 +19,17 @@ namespace bank
             int password;
             Random rnd = new Random();
 
-            accountName = rnd.Next(0, 99999);
+            Console.WriteLine("Uus konto loodud.");
+
+            accountName = rnd.Next(10000, 99999);
             Console.WriteLine("Kasutajanimi: " + accountName);
 
-            password = rnd.Next(0, 9999);
+            password = rnd.Next(1000, 9999);
             Console.WriteLine("Parool: " + password);
 
-            System.IO.File.AppendAllText("../../accounts.txt", accountName + " " + password + Environment.NewLine);
+            System.IO.File.AppendAllText("../../accounts.txt", accountName + " " + password + " 0,0" + Environment.NewLine);
+
+
 
             return true;
         }
@@ -64,6 +68,7 @@ namespace bank
 
                                 Accounts.accountName = accountName;
                                 Accounts.password = password;
+                                Accounts.lineNumber = lineNumber - 1;
 
                                 return true;
                             }

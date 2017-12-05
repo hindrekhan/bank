@@ -4,3 +4,9 @@ c:\users\opilane\documents\visual studio 2017\Projects\bank\bank\bin\Debug\bank.
 c:\users\opilane\documents\visual studio 2017\Projects\bank\bank\obj\Debug\bank.csprojResolveAssemblyReference.cache
 c:\users\opilane\documents\visual studio 2017\Projects\bank\bank\obj\Debug\bank.exe
 c:\users\opilane\documents\visual studio 2017\Projects\bank\bank\obj\Debug\bank.pdb
+C:\Users\opilane\Documents\GitHub\bank\bank\obj\Debug\bank.csprojResolveAssemblyReference.cache
+C:\Users\opilane\Documents\GitHub\bank\bank\obj\Debug\bank.exe
+C:\Users\opilane\Documents\GitHub\bank\bank\obj\Debug\bank.pdb
+C:\Users\opilane\Documents\GitHub\bank\bank\bin\Debug\bank.exe.config
+C:\Users\opilane\Documents\GitHub\bank\bank\bin\Debug\bank.exe
+C:\Users\opilane\Documents\GitHub\bank\bank\bin\Debug\bank.pdb

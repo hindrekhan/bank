@@ -8,52 +8,42 @@ namespace bank
 {
     static class Bank
     {
-        public static bool GetAccountLine
-
-        public static bool AddMoney(float amount, string accountName)
+        static float GetMoney(int lineNumber)
         {
-            try
-            {
-                using (System.IO.StreamReader sr = new System.IO.StreamReader("../../accounts.txt"))
-                {
-                    string line;
+            string[] arrLine;
+            float value;
 
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        if (line.Substring(0, 5) == accountName)
-                        {
-                            if (line.Substring(6, 4) == password)
-                            {
-                                Console.WriteLine("Sisse logitud");
+            arrLine = System.IO.File.ReadAllLines("../../accounts.txt");
 
-                                Accounts.accountName = accountName;
-                                Accounts.password = password;
+            value = float.Parse(arrLine[lineNumber].Substring(9));
 
-                                return true;
-                            }
+            return value;
+        }
 
-                            Console.WriteLine("Vale parool");
-                            return false;
-                        }
-                    }
+        public static bool AddMoney(decimal amount, int lineNumber)
+        {
+            string[] arrLine;
+            string modifiedLine;
+            decimal value;
 
-                    Console.WriteLine("Konto ei eksisteeri");
-                    return false;
-                }
-            }
+            arrLine = System.IO.File.ReadAllLines("../../accounts.txt");
+            int a = lineNumber;
 
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: " + e);
-                return false;
-            }
+            modifiedLine = arrLine[lineNumber];
+            decimal b = decimal.Parse(modifiedLine.Substring(11));
+
+            arrLine[lineNumber] += " " + amount;
 
             return true;
         }
 
-        public static bool RetrieveMoney(float amount, string password)
+        public static bool RetrieveMoney(float amount, int lineNumber)
         {
+            string[] arrLine;
 
+            arrLine = System.IO.File.ReadAllLines("../../accounts.txt");
+
+           // arrLine[lineNumber] += " " + amount;
 
             return true;
         }
