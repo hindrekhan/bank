@@ -8,6 +8,11 @@ namespace bank
 {
     static class Accounts
     {
+        public static string accountName;
+        public static string password;
+        public static int 
+
+
         public static bool Register()
         {
             int accountName;
@@ -48,10 +53,13 @@ namespace bank
                     {
                         if (line.Substring(0, 5) == accountName)
                         {
-                            string a = line.Substring(6, 3);
-                            if (line.Substring(6, 10) == password)
+                            if (line.Substring(6, 4) == password)
                             {
                                 Console.WriteLine("Sisse logitud");
+
+                                Accounts.accountName = accountName;
+                                Accounts.password = password;
+
                                 return true;
                             }
 

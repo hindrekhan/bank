@@ -37,6 +37,50 @@ namespace bank
                 }
 
             }
+
+            while (true)
+            {
+                string userInput;
+
+                Console.WriteLine();
+                Console.WriteLine("1. Võta raha välja");
+                Console.WriteLine("2. Sisesta raha");
+                Console.WriteLine("3. Logi välja");
+
+                userInput = Console.ReadLine();
+
+                if (userInput == "1")
+                {
+                    float amount;
+
+                    Console.WriteLine("Sisestage summa");
+
+                    amount = float.Parse(Console.ReadLine());
+
+                    Bank.RetrieveMoney(amount, Accounts.accountName);
+                }
+
+                else if (userInput == "2")
+                {
+                    float amount;
+
+                    Console.WriteLine("Sisestage summa");
+                    amount = float.Parse(Console.ReadLine());
+
+                    Bank.AddMoney(amount, Accounts.accountName);
+                }
+
+                else if (userInput == "3")
+                {
+                    Console.WriteLine("Välja logitud");
+                    return;
+                }
+
+                else
+                {
+                    Console.WriteLine("Teadmata käsk sisestatud");
+                }
+            }
         }
 
     }
