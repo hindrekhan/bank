@@ -56,7 +56,7 @@ namespace bank
             if (value < 0)
             {
                 Console.WriteLine("Teil pole nii palju raha");
-
+                return false;
             }
 
             arrLine[lineNumber] = modifiedLine + " " + value.ToString();

@@ -51,11 +51,11 @@ namespace bank
 
                 if (userInput == "1")
                 {
-                    float amount;
+                    decimal amount;
 
                     Console.WriteLine("Sisestage summa");
 
-                    amount = float.Parse(Console.ReadLine());
+                    amount = decimal.Parse(Console.ReadLine());
 
                     Bank.RetrieveMoney(amount, Accounts.lineNumber);
                 }
