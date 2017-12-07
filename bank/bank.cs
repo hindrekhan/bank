@@ -67,5 +67,17 @@ namespace bank
 
             return true;
         }
+
+        public static decimal GetBalance(int lineNumber)
+        {
+            string[] arrLine;
+            decimal value;
+
+            arrLine = System.IO.File.ReadAllLines("../../accounts.txt");
+
+            value = decimal.Parse(arrLine[lineNumber].Substring(10));
+
+            return value;
+        }
     }
 }

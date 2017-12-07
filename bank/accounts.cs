@@ -73,7 +73,6 @@ namespace bank
                                 return true;
                             }
 
-                            Console.WriteLine("Vale parool");
                             return false;
                         }
                     }

@@ -21,8 +21,21 @@ namespace bank
 
                 if (userInput == "1")
                 {
-                    Accounts.Login();
-                    break;
+                    bool success;
+
+                    success = Accounts.Login();
+
+                    if (success)
+                    {
+                        break;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Vale parool");
+                        continue;
+                    }
+
                 }
 
                 else if (userInput == "2")
@@ -43,6 +56,7 @@ namespace bank
                 string userInput;
 
                 Console.WriteLine();
+                Console.WriteLine("Balanss: " + Bank.GetBalance(Accounts.lineNumber));
                 Console.WriteLine("1. Võta raha välja");
                 Console.WriteLine("2. Sisesta raha");
                 Console.WriteLine("3. Logi välja");
